@@ -14,6 +14,7 @@ In NeurIPS 2018.
 - Anaconda3
 - NVCC & GCC (tested with gcc 5.4.0)
 - PyTorch 0.4.1 (does not support 0.4.0)
+- CUDA 8.0
 - Currently (tested with Nvidia RTX GPU series)
 
 ### Installation
