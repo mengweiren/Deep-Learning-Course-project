@@ -81,6 +81,11 @@ python test.py --gpu_ids ${GPU_IDS} \
 Specify the GPU_ID, RESULTS_DIR, MODEL2D_DIR, MODEL3D_DIR, CLASS, NUM_SHAPES, NUM_SAMPLES
 If you are using our pretrained models, please specify MODEL2D_DIR as './checkpoints/0411models/models_2D/car_df/latest', and MODEL3D_DIR as './checkpoints/0411models/models_3D/car_df'. (Currently only Car is supported, and there are some results under /results folder)
 
+- To calculate the FID score for generated 2D images:
+```bash
+cd fid
+fid_score.py [PATH_FOR_REAL_IMAGES] [PATH_FOR_GENERATED_IMAGES]
+```
 
 ### Citation
 
