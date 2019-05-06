@@ -88,6 +88,37 @@ cd fid
 fid_score.py [PATH_FOR_REAL_IMAGES] [PATH_FOR_GENERATED_IMAGES]
 ```
 
+### Model Testing: shape and texture interpolation
+- To interpolate the 3D shapes:
+```bash
+python test_shape.py --gpu_ids ${GPU_IDS} \
+    --checkpoints_dir ${CHECKPOINTS_DIR} \
+    --model 'shape_gan' \
+    --batch_size 16 \
+    --n_shapes 32 \
+    --interp_shape
+```  
+Specify the GPU_ID, CHECKPOINTS_DIR. If you are using our pretrained models, please specify MODEL2D_DIR as './checkpoints/0411models/models_3D/car_df/'
+
+- To interpolate the textures:
+```bash
+python test.py --gpu_ids ${GPU_IDS} \
+  --results_dir ${RESULTS_DIR} \
+  --model2D_dir ${MODEL2D_DIR} \
+  --model3D_dir ${MODEL3D_DIR} \
+  --class_3d ${CLASS} \
+  --phase 'val' \
+  --dataset_mode 'image_and_'${DATASET} \
+  --model 'test'  \
+  --seed 10 \
+  --n_shapes ${NUM_SHAPES} \
+  --n_views ${NUM_SAMPLES} \
+  --reset_shape\
+  --suffix ${CLASS}_${DATASET}_t{real_texture} ${4}\
+  --interp_texture\
+```
+Some interpolation results are under ./interpolation_results folder.
+
 ### Citation
 
 If you find this useful for your research, please cite the following paper.
